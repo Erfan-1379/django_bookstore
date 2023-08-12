@@ -4,6 +4,11 @@
 
 {% block content %}
     {% for book in books %}
-    	<h1>{{ book.title }}</h1>
+        <div style="direction:rtl">
+            <h1>{{ book.title }}</h1>
+            <p>{{ book.description }}</p>
+            <p><a href="{{ book.get_absolute_url }}">اطلاعات بیشتر</a></p>
+            <hr>
+        </div>
     {% endfor %}
 {% endblock %}
