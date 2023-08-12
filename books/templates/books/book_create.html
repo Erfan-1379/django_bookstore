@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block page_title %}ایجاد کتاب جدید{% endblock %}
+
+{% block content %}
+    <div style="direction:rtl">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-success mt-2">ذخیره</button>
+            <a class="btn btn-success mt-2" href="{% url 'book_list' %}">بازگشت</a>
+        </form>
+    </div>
+{% endblock %}
