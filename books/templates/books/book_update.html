@@ -6,7 +6,7 @@
 
 {% block content %}
     <div style="direction:rtl">
-        <form method="POST">
+        <form method="post">
             {% csrf_token %}
             {{ form|crispy }}
             <button class="btn btn-success mt-2" type="submit">ویرایش</button>
