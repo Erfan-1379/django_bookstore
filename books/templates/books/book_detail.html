@@ -5,9 +5,11 @@
 {% block content %}
     <div style="direction:rtl">
         <h1>{{ book.title }}</h1>
+        <hr>
         <p>{{ book.description }}</p>
         <p>{{ book.author }}</p>
         <h4>{{ book.price }}$</h4>
-    <a href="{% url 'book_list' %}">بازگشت</a>
+        <a href="{% url 'book_update' book.id %}"><button class="btn btn-info" type="button">ویرایش</button></a>
+    <a class="btn btn-secondary" href="{% url 'book_list' %}">بازگشت</a>
     </div>
 {% endblock %}
