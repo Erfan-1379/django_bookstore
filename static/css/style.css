@@ -18,3 +18,18 @@
     /* CUSTOM WIDTHS */
     .w-sm-75 { width: 75%!important; }
 }
+
+.line-with-middle-sep::before,
+.line-with-middle-sep::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.line-with-middle-sep::before {
+    margin-right: .25em;
+}
+
+.line-with-middle-sep::after {
+    margin-left: .25em;
+}
