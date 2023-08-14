@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 import os
 from django.dispatch.dispatcher import receiver
+from django.contrib.auth import get_user_model
 
 
 class Book(models.Model):
@@ -30,3 +31,14 @@ def auto_delete_file_on_change(sender, instance, **kwargs):
             if instance.book_cover != old_instance.book_cover:    # چک کردن تغییر در عکس
                 if os.path.isfile(old_instance.book_cover.path):   # چک کردن وجود فایل عکس قبلی
                     os.remove(old_instance.book_cover.path)    # حذف فایل عکس قبلی
+
+
+class Comment(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    text = models.TextField()
+    datetime_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.user}: {self.text}'
+
