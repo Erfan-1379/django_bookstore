@@ -2,6 +2,7 @@
     font-family: "BYekan";
     src: url("../fonts/BYekan+.ttf");
 }
+
 @font-face {
     font-family: "BYekan";
     src: url("../fonts/BYekan+ Bold.ttf");
@@ -16,7 +17,9 @@
 /* SM breakpoint */
 @media (min-width: 576px) {
     /* CUSTOM WIDTHS */
-    .w-sm-75 { width: 75%!important; }
+    .w-sm-75 {
+        width: 75% !important;
+    }
 }
 
 .line-with-middle-sep::before,
@@ -35,45 +38,56 @@
 }
 
 :root {
---background-color: #7a7575;
---text-color: #000000;
---complementary-color-1: rgb(255, 255, 255); /* A muted yellow-green color */
---complementary-color-2: #280aef; /* A muted purple color */
+    --background-color: #7a7575;
+    --text-color: #000000;
+    --complementary-color-1: rgb(255, 255, 255); /* A muted yellow-green color */
+    --complementary-color-2: #280aef; /* A muted purple color */
 }
 
 /* Set the background color and text color for the body */
 body {
-background-color: var(--background-color);
-color: var(--text-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 /* Use the complementary colors for headings and links */
 h1, h2, h3, h4, h5, h6 {
-color: var(--complementary-color-1);
+    color: var(--complementary-color-1);
 }
 
 a {
-color: var(--complementary-color-2);
+    color: var(--complementary-color-2);
 }
 
 /* Use gray, white and black for balance and contrast */
 p {
-color: #000000;
+    color: #000000;
 }
 
 strong {
-color: #123dc4;
+    color: #123dc4;
 }
 
 em {
-color: white;
+    color: white;
 }
 
 /* Use similar or close colors to the complementary colors for variation and change of degree */
 span {
-color: #000000; /* A muted yellow-green color similar to --complementary-color-1 */
+    color: #000000; /* A muted yellow-green color similar to --complementary-color-1 */
 }
 
 mark {
-color: #a17dc5; /* A muted purple color similar to --complementary-color-2 */
+    color: #a17dc5; /* A muted purple color similar to --complementary-color-2 */
+}
+
+.footer-class {
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    background-color: #71f1b7;
+}
+.list-class {
+    background-color: #b3b78a;
 }
