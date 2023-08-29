@@ -21,10 +21,14 @@
                         <div class="col-xs-12 col-md-6 text-center text-md-end mt-md-1 mt-4">
                             <h1>{{ book.title }}</h1>
                             <h5 class="small my-1"><span class="text-white">نویسنده: </span>{{ book.author }}</h5>
-                            <h5 class="small my-1"><span class="text-white">ایجاد شده توسط: </span>{{ book.user }}</h5>
-                            <a href="{% url 'book_delete' book.id %}">حذف</a>
-                            <span> | </span>
-                            <a href="{% url 'book_update' book.id %}">ویرایش</a>
+                                {% if user.is_superuser or user.is_staff %}
+                                    <h5 class="small my-1"><span class="text-white">ایجاد شده توسط: </span>{{ book.user }}</h5>
+                                    {% if book.user == user or user.is_superuser %}
+                                        <a href="{% url 'book_delete' book.id %}">حذف</a>
+                                        <span> | </span>
+                                        <a href="{% url 'book_update' book.id %}">ویرایش</a>
+                                    {% endif %}
+                                {% endif %}
                         </div>
                         <div class="col-xs-12 col-md-3 d-flex flex-column">
                             <h3 class="align-self-center pt-2 text-white align-self-md-end">
